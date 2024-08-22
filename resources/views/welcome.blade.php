@@ -30,5 +30,8 @@
 
 <div>hola</div>
 <div>Mundo</div>
+<div>
+    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+</div>
 </body>
 </html>
