@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\PruebaController;
+use App\Http\Controllers\Api\UsuarioController;
+use App\Http\Controllers\Api\ProductoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/primerRuta', [PruebaController::class, "ruta1"]);
+Route::get('/usuarios', [UsuarioController::class, "obtenerUsuarios"]);
 
-Route::get('/segundaRuta/{id}', [PruebaController::class, "ruta2"]);
+Route::get('/usuario/{id}', [UsuarioController::class, 'obtenerUsuario']);
+
+Route::get('/productos', [ProductoController::class, "obtenerProductos"]);
+
+Route::get('/productos/{id}', [ProductoController::class, "obtenerProducto"]);
+
+Route::get('/pruebaProducto/{id}', [ProductoController::class, 'obtenerProductoFind']);
