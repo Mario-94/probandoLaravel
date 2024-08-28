@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\PokemonController;
 use App\Http\Controllers\Api\UsuarioController;
 use App\Http\Controllers\Api\ProductoController;
 use Illuminate\Http\Request;
@@ -29,3 +30,8 @@ Route::get('/productos', [ProductoController::class, "obtenerProductos"]);
 Route::get('/productos/{id}', [ProductoController::class, "obtenerProducto"]);
 
 Route::get('/pruebaProducto/{id}', [ProductoController::class, 'obtenerProductoFind']);
+
+
+/* probando la api de pokemon  */
+
+Route::get('pokemon', [PokemonController::class, 'index']);
